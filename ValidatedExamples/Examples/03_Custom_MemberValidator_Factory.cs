@@ -14,7 +14,8 @@ public static class Custom_MemberValidator_Factory
 
         => (valueToValidate, path, compareTo, cancellationToken) =>
         {
-            if (String.IsNullOrWhiteSpace(valueToValidate)) return Task.FromResult(Validated<string>.Invalid(new InvalidEntry(failureMessage, path, propertyName, displayName, CauseType.Validation)));
+            if (String.IsNullOrWhiteSpace(valueToValidate)) 
+                return Task.FromResult(Validated<string>.Invalid(new InvalidEntry(failureMessage, path, propertyName, displayName, CauseType.Validation)));
               
             var result = Regex.IsMatch(valueToValidate ?? String.Empty, regexPattern, regexOptions)
                                 ? Validated<string>.Valid(valueToValidate!)

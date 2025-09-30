@@ -7,17 +7,16 @@ using ValidatedExamples.Common.Models;
 namespace ValidatedExamples.Common.ConfiguredValidators;
 public static class ContactValidators
 {
-    public static MemberValidator<string> TitleValidator          { get; }
-    public static MemberValidator<string> GivenNameValidator      { get; }
-    public static MemberValidator<string> FamilyNameValidator     { get; }
-    public static MemberValidator<int> AgeValidator               { get; }
+    public static MemberValidator<string>     TitleValidator      { get; }
+    public static MemberValidator<string>     GivenNameValidator  { get; }
+    public static MemberValidator<string>     FamilyNameValidator { get; }
+    public static MemberValidator<int>        AgeValidator        { get; }
     public static MemberValidator<ContactDto> CompareDOBValidator { get; }
-    public static MemberValidator<DateOnly> DOBValidator          { get; }
-    public static MemberValidator<string> UKMobileValidator       { get; }
-    public static MemberValidator<string> EntryValidator          { get; }
+    public static MemberValidator<DateOnly>   DOBValidator        { get; }
+    public static MemberValidator<string>     UKMobileValidator   { get; }
+    public static MemberValidator<string>     EntryValidator      { get; }
 
     public static MemberValidator<List<string>> EntryCountValidator { get; }
-
     /*
         * All of these validator are good for multiple things. Validating individual values, used in the Validated.Core's ValidationBuilder
         * or as in this demo the BlazorValidationBuilder

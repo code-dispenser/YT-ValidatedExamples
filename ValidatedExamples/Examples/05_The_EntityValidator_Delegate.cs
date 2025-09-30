@@ -32,7 +32,7 @@ public class The_EntityValidator_Delegate
 
             if (validatedTitle.IsInvalid) failures.AddRange(validatedTitle.Failures);
 
-            return  failures.Count == 0 ? Validated<ContactDto>.Invalid(failures) : Validated<ContactDto>.Valid(entity);
+            return  failures.Count > 0 ? Validated<ContactDto>.Invalid(failures) : Validated<ContactDto>.Valid(entity);
            
         };
 
@@ -45,5 +45,7 @@ public class The_EntityValidator_Delegate
         contactData.Age   = 17;
 
         var validated = await contactValidator(contactData, nameof(ContactDto));
+
+        await Console.Out.WriteLineAsync($"Is valid: {validated.IsValid}\r\nFailures: {String.Join("\r\n", validated.Failures.Select(f => f.FailureMessage))}");
     }
 }
