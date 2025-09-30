@@ -13,7 +13,6 @@ namespace ValidatedExamples.Examples;
      * 
      * The built-in MemberValidators offers comparison validators for two members but if you required comparisons against multiple members then
      * using an EntityValidator directly would solve that issue.
-     
  */ 
 public class The_EntityValidator_Delegate
 {

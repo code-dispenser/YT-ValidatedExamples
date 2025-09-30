@@ -38,7 +38,6 @@ public static class Custom_MemberValidator_Factory
         var goodEmailFormat = "john.doe@email.com";
         var badEmailFormat  = "john.doe@home";
 
-
         var emailValidator = EmailValidator();//This will create the validator each time its called, we can make this better by making it a property of a static class and creating it in a static constructor
 
         var validatedGoodFormat = await emailValidator(goodEmailFormat);
@@ -48,5 +47,4 @@ public static class Custom_MemberValidator_Factory
 
         await Console.Out.WriteLineAsync($"Is email valid: {validatedBadFormat.IsValid} - Failures: {String.Join(", ", validatedBadFormat.Failures.Select(f => f.FailureMessage))}\r\n");
     }
-
 }

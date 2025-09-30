@@ -11,11 +11,10 @@ public static class The_Validated_Type
     */ 
     public static Task Run()
     {
-
         var validResult   = Validated<string>.Valid("john.doe@mail.com");
 
-        var invalidResult = Validated<string>.Invalid(new InvalidEntry(FailureMessage:"Email format is invalid", Path: "Email", PropertyName: "Email", DisplayName: "Email Address", Cause: CauseType.Validation));
-
+        var invalidResult = Validated<string>.Invalid(new InvalidEntry(FailureMessage:"Email format is invalid", Path: "Email", PropertyName: "Email", 
+                                                                       DisplayName: "Email Address", Cause: CauseType.Validation));
         /*
             * To get the value out use either the Match method supplying two functions, one for sad path and one for the happy path as it could be either  
         */ 

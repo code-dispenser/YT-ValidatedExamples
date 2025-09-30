@@ -5,8 +5,6 @@ using Validated.Core.Validators;
 using ValidatedExamples.Common.Models;
 
 namespace ValidatedExamples.Common.ConfiguredValidators;
-
-
 public static class ContactValidators
 {
     public static MemberValidator<string> TitleValidator          { get; }
@@ -19,9 +17,6 @@ public static class ContactValidators
     public static MemberValidator<string> EntryValidator          { get; }
 
     public static MemberValidator<List<string>> EntryCountValidator { get; }
-
-
-
 
     /*
         * All of these validator are good for multiple things. Validating individual values, used in the Validated.Core's ValidationBuilder
